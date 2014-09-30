@@ -51,6 +51,13 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+
+//Defino mi propia exception, en este caso de validation y hago que haga algo
+//en este caso retornar al usuario donde estaba con los valores
+App::error(function(\HireMe\Managers\ValidationException $exception) {
+    return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

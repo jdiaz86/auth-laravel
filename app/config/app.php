@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,6 +122,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        // Vendor
+        'Way\Generators\GeneratorsServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+
+        // Custom
+        'HireMe\Components\FieldServiceProvider',
 	),
 
 	/*
@@ -188,6 +194,10 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        // Custom
+
+        'Field'           => 'HireMe\Components\Field',
 
 	),
 
